@@ -11,9 +11,6 @@ export default async function ProjectPage() {
 
   return (
     <>
-      <nav>
-        <NavBar />
-      </nav>
       <div>
         <h1>Projects</h1>
       </div>
