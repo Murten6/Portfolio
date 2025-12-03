@@ -3,20 +3,12 @@ import Image from "next/image";
 import NavBar from "../_components/navigation/NavBar";
 import Link from "next/link";
 
-export const metadata = {
-  title: "", // voorkomt kleine page title bovenaan
-};
-
 export default function ProjectsPage() {
   return (
-    <div className="w-screen h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth relative">
-      {/* NavBar altijd rechtsboven */}
-      <div className="absolute top-6 right-6 z-50">
-        <NavBar />
-      </div>
-
+    <div className="w-screen h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
       {/* Introductieblok */}
-      <section className="w-screen h-screen snap-start flex items-center justify-start px-6 md:px-20 bg-purple-700">
+      <section className="w-screen h-screen snap-start flex items-center justify-start px-6 md:px-20 relative bg-gray-900">
+        <NavBar />
         <div className="text-white max-w-2xl">
           <p className="text-5xl font-bold mb-4">Hallo!</p>
           <p className="text-xl">Dit zijn mijn projecten.</p>
@@ -46,10 +38,10 @@ export default function ProjectsPage() {
                   Rol: {project.role}
                 </p>
 
-                {/* Contrasterende knop */}
+                {/* Knop naar slug / case study */}
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="mt-6 inline-block bg-white bg-opacity-90 text-gray-900 font-semibold rounded-lg shadow-lg hover:scale-105 hover:bg-opacity-100 transition-transform duration-300 px-4 py-2 text-center"
+                  className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
                 >
                   Bekijk case study
                 </Link>
