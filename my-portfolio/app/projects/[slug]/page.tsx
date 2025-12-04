@@ -28,8 +28,8 @@ interface Project {
   finalDesigns?: string;
   learnings?: string;
   prototypeLinks?: {
-    kids?: string;
-    teachers?: string;
+    prot1?: string;
+    prot2?: string;
   };
 }
 
@@ -151,30 +151,30 @@ export default function ProjectSlugPage({ params }: SlugPageProps) {
 
       {/* Prototype links */}
       {project.prototypeLinks &&
-        (project.prototypeLinks.kids || project.prototypeLinks.teachers) && (
+        (project.prototypeLinks.prot1 || project.prototypeLinks.prot2) && (
           <section className="mb-12 text-center">
             <h2 className="text-3xl font-semibold mb-4 text-black">
               Prototype
             </h2>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              {project.prototypeLinks.kids && (
+              {project.prototypeLinks.prot1 && (
                 <a
-                  href={project.prototypeLinks.kids}
+                  href={project.prototypeLinks.prot1}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white bg-opacity-90 text-gray-900 font-semibold rounded-lg shadow-lg hover:scale-105 hover:bg-opacity-100 transition-transform duration-300 px-6 py-3 text-center"
                 >
-                  Kids Portal
+                  Prototype 1
                 </a>
               )}
-              {project.prototypeLinks.teachers && (
+              {project.prototypeLinks.prot2 && (
                 <a
-                  href={project.prototypeLinks.teachers}
+                  href={project.prototypeLinks.prot2}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white bg-opacity-90 text-gray-900 font-semibold rounded-lg shadow-lg hover:scale-105 hover:bg-opacity-100 transition-transform duration-300 px-6 py-3 text-center"
                 >
-                  Teacher Portal
+                  Prototype 2
                 </a>
               )}
             </div>
