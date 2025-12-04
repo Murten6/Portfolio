@@ -11,7 +11,7 @@
     "image5": "/images/coursestart.svg",
     "image6": "/images/coursefinish.svg",
     "image7": "/images/class.svg",
-    "background": "#6a4c93",
+    "background": "#ff8787", 
     "overview": "Het project omvatte het ontwerp van een interactief online learning platform, speciaal voor basisschoolleerlingen en hun leerkrachten. Het doel was een gebruiksvriendelijke en veilige omgeving te creëren die leren leuk en effectief maakt voor kinderen, en overzichtelijk en functioneel is voor leerkrachten.",
     "problem": "Voor kinderen: beperkte cognitieve en motorische vaardigheden, korte aandachtsspanne.\nVoor leerkrachten: behoefte aan overzicht, efficiënt beheer van lessen en voortgang.\nDoel: Een platform ontwerpen dat kinderen op een toegankelijke manier laat leren, terwijl leerkrachten efficiënt lesmateriaal kunnen beheren, voortgang volgen en leerlingen ondersteunen.",
     "research": "Desk Research & Marktanalyse: Analyse van bestaande kindvriendelijke platforms zoals National Geographic Kids, Spele.nl, PBS KIDS.\nBelangrijke inzichten: weinig tekst, grote fonts, duidelijke knoppen, simpele taal, rustige interface.\nExpert & Stakeholder Feedback: UX-experts adviseerden over zowel Kids Portal als Teacher Portal.\nFeedback van leerkrachten en opdrachtgevers werd meegenomen.\nUsability Test (Kids Portal): Prototype getest op basisschoolleerlingen. Resultaten: knoppen intuïtief, navigatie duidelijk, interacties werkten goed.\nDesignprincipes: Kids Portal: cognitive abilities, motor skills, attention span, emotional responses, simplicity, interactive elements, age-appropriate content, safety & privacy, consistent feedback & reward.\nTeacher Portal: eenvoud, consistentie, duidelijke hiërarchie, toegankelijkheid, feedback en responsiviteit, C.R.A.P.-principes, Primacy effect.",
@@ -24,15 +24,15 @@
     "prototypeLinks": {
       "kids": "https://www.figma.com/proto/nVaW5DJGjFS4fzkPyTrD0A/techtok-designs?page-id=533%3A2574&node-id=548-1606&viewport=291%2C126%2C0.06&t=s1fe5MykeBjsOcU6-1&scaling=contain&content-scaling=fixed&starting-point-node-id=548%3A1606",
       "teachers": "https://www.figma.com/proto/nVaW5DJGjFS4fzkPyTrD0A/techtok-designs?page-id=1045%3A3047&node-id=1125-3741&viewport=41%2C706%2C0.13&t=fwx1RDdiT4gnBtb0-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1125%3A3741"
-  }
-},
+    }
+  },
   {
     "slug": "project-2",
     "title": "Project 2",
     "description": "Korte omschrijving project 2",
     "role": "UX Designer",
     "image": "/images/project2.jpg",
-    "background": "#22c55e",
+    "background": "#b6e05e", 
     "overview": "Overzicht van project 2, volledig uitgeschreven met alle details en context.",
     "problem": "",
     "research": "",
@@ -53,7 +53,7 @@
     "description": "Korte omschrijving project 3",
     "role": "UX Designer",
     "image": "/images/project3.jpg",
-    "background": "#16a34a",
+    "background": "#69a3d8", 
     "overview": "Volledige beschrijving van project 3, alle context en details.",
     "problem": "Probleemstelling en doelstellingen van project 3.",
     "research": "Onderzoeksbevindingen en insights van project 3.",
@@ -74,7 +74,7 @@
     "description": "Korte omschrijving project 4",
     "role": "UX Designer",
     "image": "/images/project4.jpg",
-    "background": "#3b82f6",
+    "background": "#ffe066", 
     "overview": "Volledige beschrijving van project 4 met alle details en context.",
     "problem": "Probleemstelling en doelstellingen van project 4.",
     "research": "Onderzoeksbevindingen van project 4.",

@@ -45,7 +45,7 @@ export default function ProjectsPage() {
               }`}
             >
               {/* Tekstblok */}
-              <div className="flex flex-col justify-center w-full md:w-1/2 h-full text-white p-8">
+              <div className="flex flex-col justify-center w-full md:w-1/2 h-full text-black p-8">
                 <h2 className="text-4xl font-bold mb-4">{project.title}</h2>
                 <p className="text-lg mb-2">{project.description}</p>
                 <p className="text-md font-semibold mb-4">
