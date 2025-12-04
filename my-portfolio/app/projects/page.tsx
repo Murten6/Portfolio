@@ -18,8 +18,14 @@ export default function ProjectsPage() {
       {/* Introductieblok */}
       <section className="w-screen h-screen snap-start flex items-center justify-start px-6 md:px-20 bg-purple-700">
         <div className="text-white max-w-2xl">
-          <p className="text-5xl font-bold mb-4">Hallo!</p>
-          <p className="text-xl">Dit zijn mijn projecten.</p>
+          <p className="text-5xl font-bold mb-4">Mijn projecten</p>
+          <p className="text-xl">
+            Hier vind je een selectie van projecten waarin ik mijn
+            UX/UI-vaardigheden heb toegepast. Van interactieve prototypes tot
+            gebruikerstests, elk project laat zien hoe ik complexe problemen
+            vertaal naar toegankelijke en gebruiksvriendelijke digitale
+            oplossingen.
+          </p>
         </div>
       </section>
 
@@ -56,12 +62,13 @@ export default function ProjectsPage() {
               </div>
 
               {/* Afbeelding */}
-              <div className="relative w-full md:w-1/2 h-[60vh] md:h-full p-8">
+              <div className="flex justify-center items-center w-full md:w-1/2 p-8">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  fill
-                  className="object-cover rounded-lg"
+                  width={600} // stel maximale breedte in
+                  height={400} // hoogte wordt geschaald met aspect ratio
+                  className="object-contain rounded-lg"
                 />
               </div>
             </div>

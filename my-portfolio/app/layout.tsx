@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Mijn Portfolio",
-  description: "Portfolio van [jouw naam]",
+  description: "Portfolio van Marten Fleuren",
 };
 
 export default function RootLayout({
@@ -12,11 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-screen">
-      <body className="h-screen w-screen m-0 p-0 overflow-hidden">
-        {/* De scroll-container zit in de page */}
-        {children}
-      </body>
+    <html lang="en">
+      <body className="m-0 p-0">{children}</body>
     </html>
   );
 }

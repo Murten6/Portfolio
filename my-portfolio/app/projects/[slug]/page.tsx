@@ -1,43 +1,157 @@
-import { notFound } from "next/navigation";
-import projects from "../../data/projects.json"; // pas eventueel het pad aan
-import Image from "next/image";
+import projects from "../../data/projects.json";
 import Link from "next/link";
+import Image from "next/image";
 
-interface Props {
+interface Project {
+  slug: string;
+  title: string;
+  description: string;
+  role: string;
+  image?: string;
+  background?: string;
+  overview?: string;
+  problem?: string;
+  research?: string;
+  architecture?: string;
+  wireframes?: string;
+  visualDesign?: string;
+  testing?: string;
+  finalDesigns?: string;
+  learnings?: string;
+  prototypeLinks?: {
+    kids?: string;
+    teachers?: string;
+  };
+}
+
+interface SlugPageProps {
   params: {
     slug: string;
   };
 }
 
-export default function ProjectSlugPage({ params }: Props) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default function ProjectSlugPage({ params }: SlugPageProps) {
+  const project: Project | undefined = projects.find(
+    (p) => p.slug === params.slug
+  );
 
-  if (!project) {
-    return notFound();
-  }
+  if (!project) return <p>Project not found</p>;
+
+  const sections: { title: string; content?: string }[] = [
+    { title: "Overview", content: project.overview },
+    { title: "Problem & Goal", content: project.problem },
+    { title: "Research", content: project.research },
+    { title: "Architecture", content: project.architecture },
+    { title: "Wireframes", content: project.wireframes },
+    { title: "Visual Design", content: project.visualDesign },
+    { title: "Usability Testing", content: project.testing },
+    { title: "Final Designs", content: project.finalDesigns },
+    { title: "Learnings", content: project.learnings },
+  ];
 
   return (
     <div
-      className="w-screen h-screen flex flex-col items-center justify-center p-10"
-      style={{ backgroundColor: project.background }}
+      className="w-screen min-h-screen px-6 md:px-20 py-10"
+      style={{ backgroundColor: project.background || "#f5f5f5" }}
     >
-      <h1 className="text-5xl font-bold mb-6">{project.title}</h1>
-      <p className="text-xl mb-4">{project.description}</p>
-      <p className="text-lg font-semibold mb-6">Rol: {project.role}</p>
-      <div className="relative w-full max-w-md h-80 mb-6">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover rounded-lg"
-        />
+      {/* Hero image */}
+      {project.image && (
+        <div className="w-full flex justify-center mb-10">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={400}
+            height={200}
+            className="rounded-md"
+          />
+        </div>
+      )}
+
+      {/* Titel en rol */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold text-black mb-4">{project.title}</h1>
+        {project.role && (
+          <p className="text-xl font-semibold text-black">{project.role}</p>
+        )}
+        {project.description && (
+          <p className="mt-4 text-black max-w-3xl mx-auto">
+            {project.description}
+          </p>
+        )}
       </div>
-      <Link
-        href="/projects"
-        className="px-6 py-3 bg-white text-gray-900 font-semibold rounded-full shadow-md hover:scale-105 hover:shadow-xl transition-transform duration-300"
-      >
-        Terug naar projecten
-      </Link>
+
+      {/* Dynamische secties */}
+      {sections.map(
+        (sec, index) =>
+          sec.content && (
+            <section
+              key={index}
+              className={`mb-12 flex flex-col md:flex-row items-start md:items-center gap-8 ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
+            >
+              <div className="md:w-1/2">
+                <h2 className="text-3xl font-semibold mb-2 text-black">
+                  {sec.title}
+                </h2>
+                <p className="text-black whitespace-pre-line">{sec.content}</p>
+              </div>
+              {project.image && index === 0 && (
+                <div className="md:w-1/2 hidden md:flex justify-center">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} visual`}
+                    width={300}
+                    height={150}
+                    className="rounded-md"
+                  />
+                </div>
+              )}
+            </section>
+          )
+      )}
+
+      {/* Prototype links alleen tonen als aanwezig */}
+      {project.prototypeLinks &&
+        (project.prototypeLinks.kids || project.prototypeLinks.teachers) && (
+          <section className="mb-12 text-center">
+            <h2 className="text-3xl font-semibold mb-4 text-black">
+              Prototype
+            </h2>
+            <div className="flex flex-col md:flex-row justify-center gap-6">
+              {project.prototypeLinks.kids && (
+                <a
+                  href={project.prototypeLinks.kids}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white bg-opacity-90 text-gray-900 font-semibold rounded-lg shadow-lg hover:scale-105 hover:bg-opacity-100 transition-transform duration-300 px-6 py-3 text-center"
+                >
+                  Kids Portal
+                </a>
+              )}
+              {project.prototypeLinks.teachers && (
+                <a
+                  href={project.prototypeLinks.teachers}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white bg-opacity-90 text-gray-900 font-semibold rounded-lg shadow-lg hover:scale-105 hover:bg-opacity-100 transition-transform duration-300 px-6 py-3 text-center"
+                >
+                  Teacher Portal
+                </a>
+              )}
+            </div>
+          </section>
+        )}
+
+      {/* Back button altijd zichtbaar */}
+      <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2">
+        <Link
+          href="/projects"
+          className="inline-block bg-white bg-opacity-90 text-gray-900 font-semibold rounded-lg shadow-lg hover:scale-105 hover:bg-opacity-100 transition-transform duration-300 px-6 py-3 text-center"
+        >
+          ← Back to Projects
+        </Link>
+      </div>
     </div>
   );
 }
