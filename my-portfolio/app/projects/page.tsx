@@ -5,13 +5,23 @@ import Image from "next/image";
 import NavBar from "../_components/navigation/NavBar";
 import Link from "next/link";
 
+// Project type definiëren
+interface Project {
+  slug: string;
+  title: string;
+  description: string;
+  role: string;
+  image: string;
+  background?: string;
+}
+
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<any[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     fetch("/data/projects.json")
       .then((res) => res.json())
-      .then((data) => setProjects(data))
+      .then((data: Project[]) => setProjects(data))
       .catch((err) => console.error("Failed to load projects:", err));
   }, []);
 

@@ -1,9 +1,30 @@
-import projects from "../data/projects.json";
+"use client"; // omdat we useEffect gebruiken
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import NavBar from "../_components/navigation/NavBar";
 import Link from "next/link";
 
+interface Project {
+  slug: string;
+  title: string;
+  description: string;
+  role: string;
+  image: string;
+  background?: string;
+}
+
 export default function ProjectsPage() {
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    fetch("/data/projects.json")
+      .then((res) => res.json())
+      .then((data) => setProjects(data))
+      .catch((err) => console.error("Failed to load projects:", err));
+  }, []);
+
+  if (!projects.length) return <p>Loading projects...</p>;
+
   return (
     <div className="w-screen h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
       {/* Introductieblok */}

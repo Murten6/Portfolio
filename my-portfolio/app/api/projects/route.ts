@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const projects = [
   {
@@ -6,10 +6,10 @@ const projects = [
     title: "Mijn Portfolio",
     description: "Een persoonlijke website met Next.js, React, Typescript en Tailwind Css",
     image: "/",
-    url: "https://github.com/Murten6/Portfolio"
+    url: "https://github.com/Murten6/Portfolio",
   },
 ];
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   return NextResponse.json(projects);
 }
