@@ -74,7 +74,7 @@ export default function AboutPage() {
         <div className="flex flex-col md:flex-row items-center gap-6">
           {/* Mail Button */}
           <a
-            href="mailto:martenfleuren@gmail.com"
+            href="/mailto"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-white bg-opacity-90 text-gray-900 font-semibold rounded-lg shadow-lg hover:scale-105 hover:bg-opacity-100 transition-transform duration-300"
