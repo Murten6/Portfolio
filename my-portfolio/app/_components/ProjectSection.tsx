@@ -1,4 +1,5 @@
-"use client"; // omdat we useEffect gebruiken
+"use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import NavBar from "../_components/navigation/NavBar";
