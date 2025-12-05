@@ -25,7 +25,7 @@ export default function HomePage() {
       .catch((err) => console.error("Failed to load projects:", err));
   }, []);
 
-  // Slideshow interval
+  // Slideshow
   useEffect(() => {
     if (projects.length === 0) return;
 
