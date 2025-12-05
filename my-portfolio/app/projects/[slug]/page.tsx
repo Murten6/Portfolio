@@ -8,7 +8,7 @@ import Image from "next/image";
 interface Project {
   slug: string;
   title: string;
-  description: string;
+  explanation: string;
   role: string;
   image?: string;
   image2?: string;
@@ -91,9 +91,9 @@ export default function ProjectSlugPage({ params }: SlugPageProps) {
         {project.role && (
           <p className="text-xl font-semibold text-black">{project.role}</p>
         )}
-        {project.description && (
+        {project.explanation && (
           <p className="mt-4 text-black max-w-3xl mx-auto">
-            {project.description}
+            {project.explanation}
           </p>
         )}
       </div>
